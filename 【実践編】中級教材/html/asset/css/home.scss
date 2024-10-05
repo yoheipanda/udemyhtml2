@@ -1,0 +1,342 @@
+@charset "utf-8";
+@use "setting" as *;
+@use "common" as *;
+
+@include common;
+
+.p-hd__logo-img {
+  // .p-hd__logo-img--scroll
+  &--scroll {
+    display: none;
+  }
+}
+.p-hd {
+  &.scroll {
+    .p-hd__logo-img {
+      display: none;
+      // .p-hd__logo-img--scroll
+      &--scroll {
+        display: block;
+      }
+    }
+  }
+}
+
+.l-home-section {
+  padding-top: 136px;
+  @media only screen and (max-width: 767px) {
+    // margin-top: 80px;
+    padding-top: 104px;
+  }
+  @media only screen and (max-width: 480px) {
+    // margin-top: 50px;
+  }
+  // .l-home-section--description
+  &--description {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+
+    background-image: url("../media/images/home/image_sado_01.webp");
+    background-image: image-set(
+      url(../media/images/home/image_sado_01.webp) 1x,
+      url(../media/images/home/image_sado_01@2x.webp) 2x
+    );
+    background-image: -webkit-image-set(
+      url(../media/images/home/image_sado_01.webp) 1x,
+      url(../media/images/home/image_sado_01@2x.webp) 2x
+    );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media only screen and (max-width: 1023px) {
+      height: auto;
+    }
+  }
+
+  // .l-home-section--room
+  &--room {
+    padding-top: 131px;
+    @media only screen and (max-width: 767px) {
+      padding-top: 100px;
+    }
+  }
+
+  // .l-home-section--cuisine
+  // .l-home-section--onsen
+  &--cuisine,
+  &--onsen {
+    padding-top: 60px;
+    @media only screen and (max-width: 767px) {
+      padding-top: 20px;
+    }
+  }
+}
+/*                  description
+=====================================================================*/
+.p-desc-flex {
+  display: flex;
+  max-width: 1700px;
+  margin: auto;
+  height: 100%;
+  padding: 120px 50px 125px;
+  @media only screen and (max-width: 1023px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 91px 30px 70px;
+  }
+}
+
+.p-desc-flex__box {
+  //.p-desc-flex__box--map
+  &--map {
+    width: 55%;
+    text-align: center;
+  }
+  //.p-desc-flex__box--text
+  &--text {
+    width: 45%;
+    margin-left: -3px;
+    position: relative;
+    // padding-bottom: 203px;
+    @media only screen and (max-width: 1023px) {
+      margin-left: 0;
+    }
+  }
+
+  @media only screen and (max-width: 1023px) {
+    //.p-desc-flex__box--map
+    //.p-desc-flex__box--text
+    &--map,
+    &--text {
+      width: 100%;
+      padding: 0;
+      height: 50%;
+    }
+  }
+}
+.p-desc-flex__img {
+  padding-left: 57px;
+  width: 100%;
+  height: 100%;
+  @media only screen and (max-width: 1300px) {
+    padding-left: 0;
+  }
+  // .p-desc-flex__img--pc
+  &--pc {
+    @media only screen and (max-width: 1023px) {
+      display: none;
+    }
+  }
+  // .p-desc-flex__img--sp
+  &--sp {
+    max-width: 600px;
+    margin: 15px auto 0;
+    @media only screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.p-desc-flex__detail {
+  max-width: 530px;
+  position: absolute;
+  bottom: 5.6%;
+  left: 0;
+  @media only screen and (max-width: 1023px) {
+    padding: 0;
+    max-width: none;
+    position: static;
+  }
+}
+
+.p-desc-flex__detail-head,
+.p-desc-flex__detail-text {
+  color: #fff;
+}
+
+.p-desc-flex__detail-head {
+  font-size: 30px;
+  letter-spacing: 0.1em;
+  line-height: 1.9;
+
+  @media only screen and (max-width: 767px) {
+    font-size: 28px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 25px;
+  }
+
+  .-span {
+    @media only screen and (max-width: 767px) {
+      display: inline-block;
+    }
+  }
+}
+
+.p-desc-flex__detail-text {
+  margin-top: 25px;
+  letter-spacing: 0.1em;
+  line-height: 2.6;
+  @media only screen and (max-width: 767px) {
+    font-size: 16px;
+  }
+  @media only screen and (max-width: 480px) {
+    margin-top: 29px;
+    font-size: 14px;
+    line-height: 2.28;
+  }
+}
+
+/*               room
+======================================================= */
+
+.p-lower-link-bnr {
+  position: relative;
+}
+
+/*              room,cuisine,onsenの共通バナー
+======================================================= */
+
+.p-lower-link-bnr__link {
+  display: block;
+  overflow: hidden;
+
+  @media only screen and (min-width: 768px) {
+    &:hover {
+      .p-lower-link-bnr__img {
+        transform: scale(1.1);
+        transform-origin: center;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    height: 170px;
+  }
+}
+
+.p-lower-link-bnr__img {
+  transition: transform 0.5s;
+
+  @media only screen and (max-width: 480px) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.p-lower-link-bnr__text {
+  position: absolute;
+  top: 43%;
+  left: 7%;
+
+  color: #fff;
+  font-size: 70px;
+  font-family: $fontCormorantGaramond;
+  letter-spacing: 0.1em;
+  @media only screen and (max-width: 480px) {
+    font-size: 34px;
+    text-shadow: 0px 0px 3px #000000cc;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/*               access
+======================================================= */
+
+.p-access-desc {
+  max-width: 840px;
+}
+
+.p-access-desc__detail {
+  margin-top: 19px;
+  @media only screen and (max-width: 767px) {
+    margin-top: 29px;
+  }
+}
+
+.p-access-desc__detail-text {
+  line-height: 2.7;
+  @media only screen and (max-width: 767px) {
+    font-size: 14px;
+    line-height: 2.28;
+  }
+}
+
+.p-access-map {
+  margin: 45px auto 0;
+  @media only screen and (max-width: 767px) {
+    margin-top: 20px;
+  }
+}
+
+.p-access-map__iframe {
+  width: 100%;
+  min-height: 600px;
+  filter: grayscale(100%);
+
+  @media only screen and (max-width: 767px) {
+    min-height: 375px;
+  }
+}
+
+/*              reservation
+======================================================= */
+.p-reservation-desc {
+  max-width: 842px;
+}
+.p-reservation-desc__detail {
+  margin-top: 20px;
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 28px;
+  }
+}
+
+.p-reservation-desc__detail-text {
+  letter-spacing: 0.1em;
+  line-height: 2.7em;
+  @media only screen and (max-width: 767px) {
+    font-size: 14px;
+    line-height: 2.28;
+  }
+}
+.p-reservation-btn {
+  margin-top: 43px;
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 19px;
+  }
+}
+.p-reservation-btn__btn {
+  text-align: center;
+  display: block;
+  padding: 30px 30px 34px;
+  max-width: 400px;
+  border: 1px solid #707070;
+  transition: 0.5s;
+  @media only screen and (min-width: 768px) {
+    &:hover {
+      transition: 0.5s;
+      color: #fff;
+      background-color: #687539;
+    }
+  }
+  @media only screen and (max-width: 1023px) {
+    height: 60px;
+    padding: 20px 30px;
+  }
+}

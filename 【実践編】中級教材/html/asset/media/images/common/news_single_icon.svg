@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #687539;
+        stroke: #687539;
+        stroke-width: 1px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="三角形_1" data-name="三角形 1" class="cls-1" d="M16,8L1,0,1,16,16,8"/>
+</svg>

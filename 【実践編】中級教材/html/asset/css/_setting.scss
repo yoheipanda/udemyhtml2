@@ -1,0 +1,162 @@
+@charset "utf-8";
+@use "sass:math";
+/////////////////////////案件ごとセッティング/////////////////////////
+//ベースフォントサイズ
+$basefontS: 15px;
+$baseLetterSpacing: 0.1em;
+
+//カラー設定
+$baseColor: #000;
+$colorBaseLight:#fff;
+
+//リセット
+@mixin reset {
+  *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+    all: unset;
+    display: revert;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  body {
+    -webkit-text-size-adjust: 100%; /* 勝手に文字が拡大されるのを防ぐ */
+    /* 以下、案件ごとに適宜変更 */
+    color: $baseColor;
+    font-family: $fontYuMin;
+    background-color: $colorBaseLight;
+  }
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  table,
+  th,
+  td,
+  ul,
+  li,
+  ol,
+  dl,
+  dt,
+  dd,
+  form,
+  p {
+    margin: 0px;
+    padding: 0px;
+    font-weight: 400;
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom-style: none;
+    border-left-style: none;
+    list-style-type: none;
+    line-height: 1;
+    /* 以下、案件ごとに適宜変更 */
+    letter-spacing: $baseLetterSpacing;
+    font-size: $basefontS;
+  }
+  input,
+  textArea,
+  select,
+  button {
+    -webkit-appearance: none; /* iOS系のスタイルを外す */
+  }
+  button {
+    cursor: pointer;
+  }
+  figure {
+    margin: 0px;
+  }
+  img,
+  iframe {
+    width: 100%;
+    height: auto;
+    vertical-align: top; /* 意図しない余白の削除 */
+  }
+  table {
+    border-collapse: collapse;
+  }
+  a {
+    text-decoration: none;
+    /* 以下、案件ごとに適宜変更 */
+    letter-spacing: $baseLetterSpacing;
+    color: $baseColor;
+    cursor: pointer;
+  }
+}
+
+/////////////////////////mixin設定/////////////////////////
+///
+// awoseome @include fontIcon
+@mixin fontIcon {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+//オリジナルアイコン @include iconMoon
+@mixin iconMoon {
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+//ボックス中央寄せ　@include boxC
+@mixin boxC {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin fa {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  //font-family: FontAwesome,$fontMeiryo;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/////////////////////////変数/////////////////////////
+//フォント変数
+$fontMeiryo: "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Arial,
+  sans-serif;
+$fontHira: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo,
+  Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$fontMintyo: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3",
+  "Hiragino Mincho Pro", serif;
+$fontGothic: "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$fontRaleway: "Raleway", "MS PGothic", sans-serif;
+$fontNoto: "Noto Sans Japanese", serif;
+$fontLato: "Lato", "arial", sans-serif;
+$fontOpenSans: "Open Sans", Arial, sans-serif;
+$fontYuMin: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro",
+  "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+$fontYuGothic: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+  sans-serif;
+$fontCormorantGaramond: "Cormorant Garamond", serif;
+
+@mixin mediaYoko {
+  // デバイスが横向きの場合
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+@mixin mediaTate {
+  //デバイスが縦向きの場合
+  @media (orientation: portrait) {
+    @content;
+  }
+}

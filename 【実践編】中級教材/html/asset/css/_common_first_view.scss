@@ -1,0 +1,228 @@
+@charset "utf-8";
+@use "setting" as *;
+
+@mixin common_first_view {
+  /*                ヘッダー
+======================================================= */
+  .l-hd {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 999;
+  }
+
+  .p-hd {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 40px;
+    width: 100%;
+    height: 100px;
+    transition: background-color 0.3s;
+    @media only screen and (max-width: 767px) {
+      height: 60px;
+      padding: 0 0 0 17px;
+    }
+
+    &.scroll {
+      background-color: #fff;
+    }
+  }
+
+  .p-hd__logo {
+    max-width: 146px;
+    @media only screen and (max-width: 480px) {
+      max-width: 128px;
+    }
+  }
+
+  /*                メニューボタン
+======================================================= */
+  .l-sp-menu-btn {
+    position: fixed;
+    width: 30px;
+    height: 20px;
+    top: 39px;
+    right: 40px;
+    z-index: 9999;
+
+    &--home {
+      .p-sp-menu-btn__border {
+        background: #fff;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      top: 19px;
+      right: 20px;
+    }
+
+    &.scroll:not(.is-active) {
+      .p-sp-menu-btn__border {
+        background-color: #000;
+      }
+    }
+  }
+
+  .p-sp-menu-btn {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    cursor: pointer;
+  }
+
+  .p-sp-menu-btn__border {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #000;
+    transition: 0.5s;
+    // p-sp-menu-btn__border--01
+    &--01 {
+      top: 0;
+    }
+    // p-sp-menu-btn__border--02
+    &--02 {
+      top: 10px;
+    }
+    // p-sp-menu-btn__border--03
+    &--03 {
+      top: 20px;
+    }
+  }
+
+  .is-active {
+    .p-sp-menu-btn__border {
+      background: #fff;
+
+      // p-sp-menu-btn__border--01
+      &--01 {
+        top: 2px;
+        transform: translateY(8px) rotate(45deg);
+      }
+      // p-sp-menu-btn__border--02
+      &--02 {
+        opacity: 0;
+      }
+      // p-sp-menu-btn__border--03
+      &--03 {
+        top: 14px;
+        transform: translateY(-4px) rotate(-45deg);
+      }
+    }
+  }
+
+  /*               ハンバーガーメニュー
+======================================================= */
+
+  .l-sp-menu {
+    display: block;
+    position: fixed;
+    background-color: #000000b3;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 0.8s;
+    z-index: 1000;
+    &.is_open {
+      right: 0;
+      transition: all 0.4s;
+    }
+  }
+  .p-sp-menu {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .p-sp-menu__list {
+    width: 100%;
+    max-width: 206px;
+    text-align: center;
+
+    @media only screen and (max-width: 767px) {
+      position: relative;
+      top: 36px;
+    }
+  }
+
+  .p-sp-menu__item {
+    border-bottom: 1px solid #fff;
+    padding: 26px 0;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    @media only screen and (min-width: 768px) {
+      &:hover {
+        > .p-sp-menu__link {
+          transition: 0.5s;
+          opacity: 0.5;
+        }
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      padding: 21px 0 22px;
+      position: relative;
+      top: -10px;
+    }
+  }
+
+  .p-sp-menu__link {
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 0;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 18px;
+      line-height: 0.94;
+    }
+  }
+
+  .p-sp-menu__sns-list {
+    display: flex;
+    margin-top: 83px;
+    width: 129px;
+
+    @media only screen and (min-width: 481px) {
+      display: none;
+    }
+  }
+  .p-sp-menu__sns-item {
+    margin-left: 22px;
+    min-width: 30px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .p-sp-menu__tel {
+    color: #fff;
+    text-align: center;
+    margin-top: 38px;
+    @media only screen and (min-width: 481px) {
+      display: none;
+    }
+  }
+
+  .p-sp-menu__tel-text {
+    color: #fff;
+    letter-spacing: 0.1em;
+  }
+  .p-sp-menu__tel-link {
+    color: #fff;
+  }
+
+  body.is_sp_menu_open {
+    overflow: hidden; //背景スクロール防止
+  }
+}

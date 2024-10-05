@@ -1,0 +1,100 @@
+//////////lower common//////////
+@mixin lower {
+  .p-hd {
+    background-color: #fff;
+  }
+  .l-main {
+    padding-bottom: 120px;
+    @media only screen and (max-width: 767px) {
+      padding-bottom: 107px;
+    }
+  }
+
+  .lower_area {
+    max-width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+    @media only screen and (max-width: 767px) {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+    @media only screen and (max-width: 480px) {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  .p-lower-kv {
+    display: flex;
+    justify-content: center;
+    @media only screen and (max-width: 1500px) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    @media only screen and (max-width: 767px) {
+      padding: 0;
+      display: block;
+    }
+
+    &--pc {
+      @media only screen and (max-width: 480px) {
+        display: none;
+      }
+    }
+    &--sp {
+      @media only screen and (min-width: 481px) {
+        display: none;
+      }
+      width: 100%;
+      height: 375px;
+
+      .p-lower-kv__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .p-lower-desc {
+    max-width: 1200px;
+    padding: 107px 0 0;
+    margin: auto;
+    @media only screen and (max-width: 1023px) {
+      padding: 60px 40px 0;
+    }
+    @media only screen and (max-width: 767px) {
+      padding: 60px 0 0;
+    }
+    @media only screen and (max-width: 480px) {
+      padding: 64px 0px 0;
+    }
+  }
+  .p-lower-desc__cont {
+    margin-top: 20px;
+    @media only screen and (max-width: 767px) {
+      margin-top: 28px;
+    }
+  }
+  .p-lower-desc__text {
+    letter-spacing: 0.1em;
+    line-height: 2.67;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 14px;
+      line-height: 2.28;
+    }
+  }
+
+  .p-lower-slider {
+    margin: 105px auto 0px;
+    overflow: hidden;
+    @media only screen and (max-width: 767px) {
+      margin-top: 50px;
+    }
+  }
+
+  .p-lower-slider__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
