@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>たらい舟 | 佐渡の古民家旅館</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/【実践編】中級教材/html/asset/css/swiper-bundle.min.css">
   <link rel="stylesheet" href="asset/css/home_first_view.css">
   <link rel="stylesheet" href="asset/css/home.css">
 </head>
@@ -63,10 +64,10 @@
             <div class="swiper-slide p-first-view__item">
               <picture>
                 <source media="(min-width:768px)"
-                srcset="/【実践編】中級教材/html/asset/media/images/home/kv_image_04.webp 1x, /【実践編】中級教材/html/asset/media/images/home/kv_image_04@2x.webp 2x">
+                srcset="/【実践編】中級教材/html/asset/media/images/home/kv_image_03.webp 1x, /【実践編】中級教材/html/asset/media/images/home/kv_image_03@2x.webp 2x">
                 
-                <source media="(max-width:767px)" srcset="/【実践編】中級教材/html/asset/media/images/home/kv_image_04.webp"> 
-              <img src="/【実践編】中級教材/html/asset/media/images/home/kv_image_04.webp" class="p-first-view__img" alt="" width="1600" height="1000">  
+                <source media="(max-width:767px)" srcset="/【実践編】中級教材/html/asset/media/images/home/kv_image_03.webp"> 
+              <img src="/【実践編】中級教材/html/asset/media/images/home/kv_image_03.webp" class="p-first-view__img" alt="" width="1600" height="1000">  
               </picture>
             </div>
 
@@ -100,7 +101,7 @@
         </div>
 
         <div class="p-first-view__pagination-wrap">
-          <div class="p-first-view__paginatio"></div>n
+          <div class="p-first-view__pagination"></div>
         </div>
 
       </div><!-- first_view -->
@@ -389,6 +390,7 @@
       </div>
     </div><!-- / #sp_menu -->
   </div><!--l-wrapper-->
+  <script src="/【実践編】中級教材/html/asset/js/swiper-bundle.min.js"></script>
   <script src="asset/js/jquery.js"></script>
   <script src="asset/js/common.js"></script>
   <script>
@@ -405,6 +407,22 @@
 
     $(function () {
       checkHeaderFixed();
+
+      let swiper_slide = new Swiper(".p-first-view__fv-slide",{
+        autoplay:{
+          delay:5000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        loopAdditionalSlide: 1,
+        effect: "fade",
+        speed: 3000,
+        pagination: {
+          el: ".p-first-view__pagination",
+          type: "bullets",
+          clickable: true
+        }
+        });
     });
 
     $(window).scroll(function () {
