@@ -242,8 +242,7 @@ body.is_sp_menu_open {
 .p-first-view__img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @keyframes kv_zoom {
@@ -306,7 +305,7 @@ body.is_sp_menu_open {
 .p-first-view__pagination-wrap {
   position: absolute;
   bottom: 30px;
-  right: 30%;
+  right: 30px;
 }
 
 .p-first-view__pagination {
@@ -318,6 +317,7 @@ body.is_sp_menu_open {
   background-color: transparent;
   width: 30px;
   margin: 0 7px !important;
+  opacity: 1;
 }
 .swiper-pagination-bullet::before {
   content: "";
@@ -329,6 +329,11 @@ body.is_sp_menu_open {
   height: 2px;
   background-color: #fff;
 }
+.swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+  background: #6A7541;
+}
 
 /*              reserve_btn
-======================================================= *//*# sourceMappingURL=home_first_view.css.map */
+======================================================= */
+
+/*# sourceMappingURL=home_first_view.css.map */

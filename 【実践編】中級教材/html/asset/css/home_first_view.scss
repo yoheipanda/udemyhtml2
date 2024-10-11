@@ -87,7 +87,7 @@
 .p-first-view__pagination-wrap{
     position: absolute;
     bottom: 30px;
-    right: 30%;
+    right: 30px;
 }
 
 .p-first-view__pagination{
@@ -111,6 +111,13 @@
         height: 2px;
         background-color: #fff;
     } 
+    
+    &.swiper-pagination-bullet-active{
+      &::before{
+        background: #6A7541;
+      }
+      
+    }
 }
 
 /*              reserve_btn
