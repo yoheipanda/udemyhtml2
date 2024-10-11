@@ -88,6 +88,10 @@
     position: absolute;
     bottom: 30px;
     right: 30px;
+    @media only screen and (max-width: 767px) {
+    right: 50%;
+    transform: translateX(50%)
+    bottom: 10px;
 }
 
 .p-first-view__pagination{
