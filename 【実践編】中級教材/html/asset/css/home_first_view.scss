@@ -90,9 +90,9 @@
     right: 30px;
     @media only screen and (max-width: 767px) {
     right: 50%;
-    transform: translateX(50%)
+    transform: translateX(50%);
     bottom: 10px;
-}
+}}
 
 .p-first-view__pagination{
     display: flex;
@@ -130,9 +130,10 @@
   position: fixed;
   z-index: 999;
   top: 50%;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
   right: 0;
   background-color: #6A7541;
   width: 60px;
   height: 130px;
 }
+  
