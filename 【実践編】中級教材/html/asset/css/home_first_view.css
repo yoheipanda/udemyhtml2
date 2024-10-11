@@ -235,6 +235,8 @@ body.is_sp_menu_open {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  z-index: -1;
+  position: relative;
 }
 
 .p-first-view__img {
@@ -252,8 +254,53 @@ body.is_sp_menu_open {
     transform: scale(1.3);
   }
 }
-.swiper-slide-active .p-first-view__img {
+.swiper-slide-active .p-first-view__img,
+.swiper-slie-prev .p-first-view__img,
+.swiper-slide-duplicate-active .p-first-view__img,
+.swiper-slide-duplicate-prev .p-first-view__img {
   animation: kv_zoom 10s linear 0s normal both;
+}
+
+.p-first-view__fv-message {
+  writing-mode: vertical-rl;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.p-first-view__fv-vertical {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.1;
+  margin-right: 60px;
+}
+.p-first-view__fv-vertical:first-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 767px) {
+  .p-first-view__fv-vertical {
+    letter-spacing: 0.25em;
+    line-height: 1;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .p-first-view__fv-vertical {
+    margin-right: 30px;
+    font-style: 16px;
+  }
+}
+
+.p-first-view__fv-logo {
+  position: absolute;
+  left: 80px;
+  bottom: 74px;
+  max-width: 400px;
+}
+@media only screen and (max-width: 767px) {
+  .p-first-view__fv-logo {
+    display: none;
+  }
 }
 
 /*              reserve_btn
