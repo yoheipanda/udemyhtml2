@@ -118,7 +118,7 @@
     
     &.swiper-pagination-bullet-active{
       &::before{
-        background: #6A7541;
+        background-color: #6A7541;
       }
       
     }
@@ -126,3 +126,13 @@
 
 /*              reserve_btn
 ======================================================= */
+.p-reserve-btn{
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  transform: translateY(-50%)
+  right: 0;
+  background-color: #6A7541;
+  width: 60px;
+  height: 130px;
+}
