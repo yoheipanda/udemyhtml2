@@ -255,7 +255,7 @@ body.is_sp_menu_open {
   }
 }
 .swiper-slide-active .p-first-view__img,
-.swiper-slie-prev .p-first-view__img,
+.swiper-slide-prev .p-first-view__img,
 .swiper-slide-duplicate-active .p-first-view__img,
 .swiper-slide-duplicate-prev .p-first-view__img {
   animation: kv_zoom 10s linear 0s normal both;
