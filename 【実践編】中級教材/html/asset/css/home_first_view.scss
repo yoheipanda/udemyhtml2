@@ -117,24 +117,42 @@
     } 
     
     &.swiper-pagination-bullet-active{
-      &::before{
+    &::before{
         background-color: #6A7541;
-      }
-      
+    }
+    
     }
 }
 
 /*              reserve_btn
 ======================================================= */
 .p-reserve-btn{
-  position: fixed;
-  z-index: 999;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0;
-  background-color: #6A7541;
-  width: 60px;
-  height: 130px;
-  
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    background-color: #6A7541;
+    width: 60px;
+    height: 130px;
+    transition: all 0.5;
+    &.is-bottom{
+        opacity: 0;
+        pointer-events: none;
+    }
+    @media only screen and (min-width: 768px) {
+        &:hover{
+            opacity: 0.8;
+        }
+    }
 }
-  
+
+.p-reserve-btn__btn{
+    writing-mode: vertical-rl;
+    color: #fff;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
